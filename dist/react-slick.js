@@ -316,7 +316,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.adaptHeight();
 	    window.addEventListener('resize', this.onWindowResized);
 	    _react2['default'].findDOMNode(this.refs.list).addEventListener('slideTo', (function (e) {
-	      this.slideHandler(e.detail.targetSlide);
+	      this.changeSlide({ message: 'dots', index: e.detail.targetSlide, slidesToScroll: e.detail.slidesToScroll });
 	    }).bind(this));
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
