@@ -44,7 +44,7 @@ export var InnerSlider = React.createClass({
     this.initialize(this.props);
     this.adaptHeight();
     window.addEventListener('resize', this.onWindowResized);
-    this.findDOMNode(this.refs.list).addEventListener('slideTo', function(e){
+    React.findDOMNode(this.refs.list).addEventListener('slideTo', function(e){
       this.slideHandler(e.detail.targetSlide);
     }.bind(this));
   },
