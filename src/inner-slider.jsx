@@ -44,6 +44,7 @@ export var InnerSlider = React.createClass({
     this.initialize(this.props);
     this.adaptHeight();
     window.addEventListener('resize', this.onWindowResized);
+    React.findDOMNode(this.refs.list).addEventListener('stateReady', this.onWindowResized);
     React.findDOMNode(this.refs.list).addEventListener('slideTo', function(e){
       this.changeSlide({ message: 'dots', index: e.detail.targetSlide, slidesToScroll: e.detail.slidesToScroll });
     }.bind(this));
