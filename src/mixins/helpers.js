@@ -39,8 +39,11 @@ var helpers = {
     if (this.props.adaptiveHeight) {
       var selector = '[data-index="' + this.state.currentSlide +'"]';
       if (this.refs.list) {
-        var slickList = this.refs.list.getDOMNode();
-        slickList.style.height = slickList.querySelector(selector).offsetHeight + 'px';
+        var slickList = this.refs.list.getDOMNode(),
+            slide = slickList.querySelector(selector);
+        if(slide){
+          slickList.style.height = slide.offsetHeight + 'px';
+        }
       }
     }
   },
